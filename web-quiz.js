@@ -136,6 +136,7 @@ function showMyResults(){
     minivan. A score of between 8-11 will show a nice gray car. A score of 12 will show the 
     red sports car. There will also appear a personalized message as well as a button to restart the quiz*/
     $(".final_question").click(function(event){
+        event.preventDefault();
         $(".image_and_options").hide();
         $(".logo_question").replaceWith(
             `<h2>You got ${STORE.totalScore} / ${STORE.questions.length} car logos!`)
@@ -193,7 +194,6 @@ function retryQuiz(){
     restart the score at zero. It will allow the user to flip through the quiz all over again */
     console.log("`retryQuiz` has executed")
     $(".reset").click(function(event){
-        //alert("peter these are parachuetes")
         STORE.currentQuestion = 0
         STORE.totalScore = 0
         $(".results").hide();
