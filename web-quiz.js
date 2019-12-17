@@ -138,8 +138,9 @@ function showMyResults(){
     $(".final_question").click(function(event){
         event.preventDefault();
         $(".image_and_options").hide();
-        $(".logo_question").replaceWith(
-            `<h2>You got ${STORE.totalScore} / ${STORE.questions.length} car logos!`)
+        $(".logo_question").hide()
+        $(".score_section").append(
+            `<h2 class="logo_question>You got ${STORE.totalScore} / ${STORE.questions.length} car logos!`)
         if (STORE.totalScore == STORE.questions.length){
             $(".results").append(
                 `<div>
@@ -149,7 +150,7 @@ function showMyResults(){
                     <p>Incredible! You knew every logo! Outstanding job!</p>
                 </div>
                 
-                <button class="reset">Click to take another lap!</button>`
+                <button class="start_button">Click to take another lap!</button>`
             )
         } else if (STORE.totalScore >= 8){
             $(".results").append(
@@ -160,7 +161,7 @@ function showMyResults(){
                     <p>Pretty good, pretty good. Not perfect but still pretty good</p>
                 </div>
                 
-                <button class="reset">Click to take another lap!</button>`
+                <button class="start_button">Click to take another lap!</button>`
             )
         } else if (STORE.totalScore >=4){
             $(".results").append(
@@ -171,7 +172,7 @@ function showMyResults(){
                     <p>That was....mehhh. You're fine....not great, just....fine</p>
                 </div>
                 
-                <button class="reset">Click to take another lap!</button>`
+                <button class="start_button">Click to take another lap!</button>`
             )
         } else {
             $(".results").append(
@@ -182,9 +183,10 @@ function showMyResults(){
                     <p>That was awful! You should study up on your car logos</p>
                 </div>
                 
-                <button class="reset">Click to take another lap!</button>`
+                <button class="start_button">Click to take another lap!</button>`
             )
         }
+        restartScore();
         retryQuiz();
  })
 }
@@ -193,18 +195,22 @@ function retryQuiz(){
     /* this button will be at the bottom of all of the final scores, and it will reshow the home page and will 
     restart the score at zero. It will allow the user to flip through the quiz all over again */
     console.log("`retryQuiz` has executed")
-    $(".reset").click(function(event){
-        STORE.currentQuestion = 0
-        STORE.totalScore = 0
+    $(".start_button").click(function(event){
         $(".results").hide();
-        $(".question_counter").html(STORE.currentQuestion + 1 + " / " + STORE.questions.length)
-        $(".score_counter").html(STORE.totalScore + " / " + STORE.questions.length)
-        $(".logo_question").replaceWith(`<h2>Which logo is this?</h2>`)
-        $(".image_and_options").prepend(answerPrompt())
-
+        $("image_and_options").toggle()
+        $(".logo_question").toggle()
     })
 }
-
+function restartScore(){
+    $(".start_button").click(function(event){
+        STORE.currentQuestion = 0
+        STORE.totalScore = 0
+        $(".question_counter").html(STORE.currentQuestion + 1 + " / " + STORE.questions.length)
+        $(".score_counter").html(STORE.totalScore + " / " + STORE.questions.length)
+        beginTheLogoQuiz()
+        answerPrompt()
+})
+}
 
 
 function thingyTest(){
@@ -214,5 +220,3 @@ function thingyTest(){
     submitAnswer();
 }
 $(thingyTest);
-
-
