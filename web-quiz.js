@@ -119,6 +119,7 @@ function theNextButton(){
 }
 
 function loadNextQuestion(){
+    $(".next_question").off('click')
     $(".next_question").click(function(event){
         $(".current_logo").remove();
         $(".button_container").remove();
@@ -189,6 +190,7 @@ function showMyResults(){
         }
         restartScore();
         retryQuiz();
+
  })
 }
 
@@ -198,7 +200,7 @@ function retryQuiz(){
     console.log("`retryQuiz` has executed")
     $(".start_button").click(function(event){
         event.preventDefault()
-        $(".results").hide();
+        $(".results").children().remove();
         $(".image").toggle();
         $(".question_options").toggle();
         $(".logo_question").toggle()
