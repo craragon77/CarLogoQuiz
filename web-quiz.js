@@ -120,7 +120,7 @@ function theNextButton(){
 
 function loadNextQuestion(){
     $(".next_question").click(function(event){
-        $("img").remove();
+        $(".current_logo").remove();
         $(".button_container").remove();
         $("#given_answer").remove();
         $(this).remove();
@@ -137,7 +137,8 @@ function showMyResults(){
     red sports car. There will also appear a personalized message as well as a button to restart the quiz*/
     $(".final_question").click(function(event){
         event.preventDefault();
-        $(".image_and_options").hide();
+        $(".image").hide();
+        $(".question_options").hide();
         $(".logo_question").hide()
         $(".score_section").append(
             `<h2 class="logo_question>You got ${STORE.totalScore} / ${STORE.questions.length} car logos!`)
@@ -196,19 +197,22 @@ function retryQuiz(){
     restart the score at zero. It will allow the user to flip through the quiz all over again */
     console.log("`retryQuiz` has executed")
     $(".start_button").click(function(event){
+        event.preventDefault()
         $(".results").hide();
-        $("image_and_options").toggle()
+        $(".image").toggle();
+        $(".question_options").toggle();
         $(".logo_question").toggle()
+        answerPrompt()
     })
 }
 function restartScore(){
+    event.preventDefault()
     $(".start_button").click(function(event){
         STORE.currentQuestion = 0
         STORE.totalScore = 0
         $(".question_counter").html(STORE.currentQuestion + 1 + " / " + STORE.questions.length)
         $(".score_counter").html(STORE.totalScore + " / " + STORE.questions.length)
-        beginTheLogoQuiz()
-        answerPrompt()
+        
 })
 }
 
