@@ -55,8 +55,8 @@ function beginTheLogoQuiz(){
         $("header").remove();
         $(".logo_question").toggle();
         $(".image_and_options").prepend(answerPrompt())
-        $(".question_counter").html(STORE.currentQuestion + 1 + " / " + STORE.questions.length)
-        $(".score_counter").html(STORE.totalScore + " / " + STORE.questions.length)
+        $(".question_counter").html("Question: " + (STORE.currentQuestion + 1) + " / " + STORE.questions.length)
+        $(".score_counter").html("Score: " + STORE.totalScore + " / " + STORE.questions.length)
     })
     console.log("`beginTheLogoQuiz` has executed")
 }
@@ -85,18 +85,18 @@ function submitAnswer(){
         event.preventDefault();
             if (($("input[name='test1']:checked").val()) === STORE.questions[STORE.currentQuestion].answer) {
                 $(".question_options").prepend(
-                    `<div id="given_answer">
+                    `<div class="given_answer right">
                         <p>That's right! Good Job!</p>
                     </div>`
                 ), increaseScore();
                 theNextButton();
-                $(".score_counter").html(STORE.totalScore + " / " + STORE.questions.length)
+                $(".score_counter").html("Score: " + STORE.totalScore + " / " + STORE.questions.length)
             } else if (!$("input[name='test1']:checked").val()) {
-                alert('Please choose an option')
+                alert('Roadblock! Please choose an option to continue')
              }
             else {
                 $(".question_options").prepend(
-                `<div id="given_answer">
+                `<div class="given_answer wrong">
                     <p>WRONG! This is the ${STORE.questions[STORE.currentQuestion].answer} logo</p>
                 </div>`
                 ), theNextButton();
@@ -122,11 +122,11 @@ function loadNextQuestion(){
     $(".next_question").click(function(event){
         $(".current_logo").remove();
         $(".button_container").remove();
-        $("#given_answer").remove();
+        $(".given_answer").remove();
         $(this).remove();
         increaseNumber();
         answerPrompt();
-        $(".question_counter").html(STORE.currentQuestion + 1 + " / " + STORE.questions.length)
+        $(".question_counter").html("Question: " + (STORE.currentQuestion + 1) + " / " + STORE.questions.length)
     })
 }
 
@@ -140,7 +140,7 @@ function showMyResults(){
         $(".image").find(".current_logo").remove();
         $(".question_options").find(".button_container").remove();
         $(".final_question").remove();
-        $("#given_answer").remove();
+        $(".given_answer").remove();
         $(".logo_question").hide()
         $(".score_section").append(
             `<h2 class="final_score">You got ${STORE.totalScore} / ${STORE.questions.length} car logos!`)
@@ -212,8 +212,8 @@ function restartScore(){
     $(".start_button").click(function(event){
         STORE.currentQuestion = 0
         STORE.totalScore = 0
-        $(".question_counter").html(STORE.currentQuestion + 1 + " / " + STORE.questions.length)
-        $(".score_counter").html(STORE.totalScore + " / " + STORE.questions.length)
+        $(".question_counter").html("Question: " + (STORE.currentQuestion + 1) + " / " + STORE.questions.length)
+        $(".score_counter").html("Score: " + STORE.totalScore + " / " + STORE.questions.length)
         
 })
 }
@@ -222,7 +222,6 @@ function restartScore(){
 function thingyTest(){
     beginTheLogoQuiz();
     theNextButton();
-    //retryQuiz();
     submitAnswer();
 }
 $(thingyTest);

@@ -1,6 +1,6 @@
 img{
-    max-height: 400px;
-    max-width: 400px;
+    max-height: 150px;
+    max-width: 300px;
 }
 
 .poor-score, .mehh-score, .good-score, .great-score{
@@ -13,4 +13,107 @@ img{
 }
 .logo_question{
     display: none;
+}
+*{
+    font-family: 'Racing Sans One', sans-serif;
+}
+body{
+    background-image: url('../fotos/country-road.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: red;
+    border: 3px red solid;
+    height: auto;
+    width: auto;
+    margin-right: 50px;
+    margin-left: 50px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    padding: 0px;
+}
+header, .quiz{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+header{
+    display: block;
+    margin-top: 200px
+}
+
+.quiz{
+    padding-top: 100px;
+    position: flex;
+}
+#button_option{
+    padding: 25px;
+}
+.button_container{
+    background-color: (0, 0, 0, .4);
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-bottom: 30px;
+}
+.submit_answer, .next_question, .final_question{
+    height: 40px;
+    width: 150px;
+    border-radius: 5%;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+    background-color: rgba(255, 238, 0);
+    font-size: 15px;
+}
+.start_button{
+    height: 50px;
+    width: 150;
+    background-color: rgba(255, 238, 0);
+    font-size: 20px;
+    text-align: left;
+}
+
+.right {
+    border: 3px green solid;
+    background-color: ivory;
+}
+.wrong {
+    border: 3px red solid;
+    background-color: ivory;
+}
+@media only screen and (min-width: 800px){
+    h3{
+        font-size: 30px;
+    }
+    .bet{
+        font-size: 30px;
+    }
+    .title{
+        font-size: 60px;
+    }
+    body{
+        height: auto;
+    }
+    .logo_question{
+        font-size: 45px;
+    }
+    img{
+        min-height: 300px;
+        min-width: 600px;
+    }
+    .question_counter, .score_counter{
+        font-size: 30px;
+    }
+    .button_container{
+        margin-top: 15px;
+        font-size: 20px;
+    }
+    .submit_answer, .next_question, .final_question{
+        font-size: 20px;
+        width: 200px;
+        height: 50px;
+    }
+    
+
 }
