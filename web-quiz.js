@@ -119,7 +119,6 @@ function theNextButton(){
 }
 
 function loadNextQuestion(){
-    $(".next_question").off('click')
     $(".next_question").click(function(event){
         $(".current_logo").remove();
         $(".button_container").remove();
@@ -138,8 +137,10 @@ function showMyResults(){
     red sports car. There will also appear a personalized message as well as a button to restart the quiz*/
     $(".final_question").click(function(event){
         event.preventDefault();
-        $(".image").hide();
-        $(".question_options").hide();
+        $(".image").find(".current_logo").remove();
+        $(".question_options").find(".button_container").remove();
+        $(".final_question").remove();
+        $("#given_answer").remove();
         $(".logo_question").hide()
         $(".score_section").append(
             `<h2 class="logo_question>You got ${STORE.totalScore} / ${STORE.questions.length} car logos!`)
@@ -201,8 +202,6 @@ function retryQuiz(){
     $(".start_button").click(function(event){
         event.preventDefault()
         $(".results").children().remove();
-        $(".image").toggle();
-        $(".question_options").toggle();
         $(".logo_question").toggle()
         answerPrompt()
     })
