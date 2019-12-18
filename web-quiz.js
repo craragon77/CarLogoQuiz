@@ -143,7 +143,7 @@ function showMyResults(){
         $("#given_answer").remove();
         $(".logo_question").hide()
         $(".score_section").append(
-            `<h2 class="logo_question>You got ${STORE.totalScore} / ${STORE.questions.length} car logos!`)
+            `<h2 class="final_score">You got ${STORE.totalScore} / ${STORE.questions.length} car logos!`)
         if (STORE.totalScore == STORE.questions.length){
             $(".results").append(
                 `<div>
@@ -203,6 +203,7 @@ function retryQuiz(){
         event.preventDefault()
         $(".results").children().remove();
         $(".logo_question").toggle()
+        $(".score_section").find(".final_score").remove();
         answerPrompt()
     })
 }
