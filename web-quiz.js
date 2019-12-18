@@ -2,29 +2,29 @@
 const STORE = {
     questions: [
     //question 1
-    {options: ['Ford', 'General Motors', 'Cheverolet', 'Cadillac'], answer: 'Cheverolet'},
+    {options: ['Ford', 'General Motors', 'Chevrolet', 'Cadillac'], answer: 'Chevrolet'},
     //question 2
     {options: ['Lexus', 'Infiniti', 'Honda', 'Mitsubishi'], answer: 'Infiniti'},
     //question 3
-    {options: ['Ferrari', 'Porche', 'Lamborghini', 'Jaguar'], answer: 'Ferrari'},
+    {options: ['Ferrari', 'Porsche', 'Lamborghini', 'Jaguar'], answer: 'Ferrari'},
     //question 4
-    {options: ['Lexus', 'Suburu', 'Lotus', 'Lincoln'], answer: 'Lexus'},
+    {options: ['Lexus', 'Subaru', 'Lotus', 'Lincoln'], answer: 'Lexus'},
     //question 5
-    {options: ['BMW', 'Nissan', 'Audi', 'Marcedes-Benz'], answer: 'Marcedes-Benz'},
+    {options: ['BMW', 'Nissan', 'Audi', 'Marcedes-Benz'], answer: 'Mercedes-Benz'},
     //question 6
     {options: ['Mazda', 'Toyota', 'Ford', 'General Motors'], answer: 'Toyota'},
     //question 7
-    {options: ['BMW', 'Rolls Royce', 'Volkswagen', 'Bently'], answer: 'Volkswagen'},
+    {options: ['BMW', 'Rolls Royce', 'Volkswagen', 'Bentley'], answer: 'Volkswagen'},
     //question 8
-    {options: ['Cadillac', 'Hummer', 'Jeep', 'Bucker'], answer: 'Cadillac'},
+    {options: ['Cadillac', 'Hummer', 'Jeep', 'Dodge'], answer: 'Cadillac'},
     //question 9
-    {options: ['Bently', 'Acura', 'Audi', 'Mazda'], answer: 'Audi'},
+    {options: ['Bentley', 'Acura', 'Audi', 'Mazda'], answer: 'Audi'},
     //question 10
     {options: ['Mini', 'Subaru', 'Ford', 'Chrysler'], answer: 'Subaru'},
     //question 11
     {options: ['Saturn', 'Fiat', 'Tatra', 'Tesla'], answer: 'Tesla'},
     //question 12
-    {options: ['Maserati', 'Saturn', 'Lambougini', 'Mercury'], answer: 'Maserati'}
+    {options: ['Maserati', 'Saturn', 'Lamborghini', 'Mercury'], answer: 'Maserati'}
     ],
     currentQuestion: 0,
     totalScore: 0
