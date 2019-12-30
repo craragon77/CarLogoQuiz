@@ -10,7 +10,7 @@ const STORE = {
     //question 4
     {options: ['Lexus', 'Subaru', 'Lotus', 'Lincoln'], answer: 'Lexus'},
     //question 5
-    {options: ['BMW', 'Nissan', 'Audi', 'Marcedes-Benz'], answer: 'Mercedes-Benz'},
+    {options: ['BMW', 'Nissan', 'Audi', 'Mercedes-Benz'], answer: 'Mercedes-Benz'},
     //question 6
     {options: ['Mazda', 'Toyota', 'Ford', 'General Motors'], answer: 'Toyota'},
     //question 7
