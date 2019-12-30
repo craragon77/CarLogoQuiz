@@ -18,7 +18,7 @@ img{
     font-family: 'Racing Sans One', sans-serif;
 }
 body{
-    background-image: url('../fotos/country-road.jpg');
+    background-image: url('fotos/country-road.jpg');
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;

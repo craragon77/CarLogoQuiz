@@ -30,9 +30,9 @@ const STORE = {
     totalScore: 0
 }
 
-const logo = ["../fotos/Chevrolet-logo.jpg", '../fotos/infiniti-logo.jpg', '../fotos/Ferrari-Logo.jpg',
-'../fotos/Lexus-Logo.jpg','../fotos/marcedes-benz-logo.jpg', '../fotos/toyota.jpg', '../fotos/volkswagen.logo.jpg', '../fotos/cadillac-logo.jpg',
-'../fotos/audi-logo.jpg', '../fotos/subaru-logo.jpg', '../fotos/tesla-logo.jpg', '../fotos/maserati-logo.jpg']
+const logo = ["fotos/Chevrolet-logo.jpg", 'fotos/infiniti-logo.jpg', 'fotos/Ferrari-Logo.jpg',
+'fotos/Lexus-Logo.jpg','fotos/marcedes-benz-logo.jpg', 'fotos/toyota.jpg', 'fotos/volkswagen.logo.jpg', 'fotos/cadillac-logo.jpg',
+'fotos/audi-logo.jpg', 'fotos/subaru-logo.jpg', 'fotos/tesla-logo.jpg', 'fotos/maserati-logo.jpg']
 
 
 
@@ -147,7 +147,7 @@ function showMyResults(){
         if (STORE.totalScore == STORE.questions.length){
             $(".results").append(
                 `<div>
-                    <img src="../fotos/yellow-sports-car.jpg">
+                    <img src="fotos/yellow-sports-car.jpg">
                 </div>
                 <div>
                     <p>Incredible! You knew every logo! Outstanding job!</p>
@@ -158,7 +158,7 @@ function showMyResults(){
         } else if (STORE.totalScore >= 8){
             $(".results").append(
                 `<div>
-                    <img src="../fotos/not-too-shabby-car.jpg">
+                    <img src="fotos/not-too-shabby-car.jpg">
                 </div>
                 <div>
                     <p>Pretty good, pretty good. Not perfect but still pretty good</p>
@@ -169,7 +169,7 @@ function showMyResults(){
         } else if (STORE.totalScore >=4){
             $(".results").append(
                 `<div>
-                    <img src="../fotos/old-minivan.jpg">
+                    <img src="fotos/old-minivan.jpg">
                 </div>
                 <div>
                     <p>That was....mehhh. You're fine....not great, just....fine</p>
@@ -180,7 +180,7 @@ function showMyResults(){
         } else {
             $(".results").append(
             `<div>
-                    <img src="../fotos/clunker.jpg">
+                    <img src="fotos/clunker.jpg">
                 </div>
                 <div>
                     <p>That was awful! You should study up on your car logos</p>
